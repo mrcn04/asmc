@@ -1,14 +1,16 @@
 CC = gcc
 CFLAGS = -mmacosx-version-min=10.14 -Wall -g -framework IOKit
-CPPFLAGS = -DCMD_TOOL_BUILD
+EXEC   = asmc
+PREFIX = /usr/local
 
-all: smc
+build: $(EXEC)
 
-smc: smc.o
-	$(CC) $(CFLAGS) -o smc smc.o
+$(EXEC) : smc.c
+	$(CC) $(CFLAGS) -o $@ $?
 
-smc.o: smc.h smc.c
-	$(CC) $(CPPFLAGS) -c smc.c
+install : $(EXEC)
+	@install -v $(EXEC) $(PREFIX)/bin/$(EXEC)
+
 
 clean:
-	-rm -f smc smc.o
+	rm $(EXEC)

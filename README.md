@@ -8,6 +8,29 @@ This tool will allow you to read / write values to the SMC which could or could 
 
 **USE THIS PROGRAM AT YOUR OWN RISK!**
 
+### Usage
+
+#### With Command Line
+
+##### Compiling
+
+```
+make
+```
+
+##### Running
+
+```
+./asmc
+```
+
+or
+
+```
+sudo make install # installs to /usr/local/bin
+asmc
+```
+
 #### Example Usage with Swift
 
 ```swift
