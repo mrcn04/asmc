@@ -4,9 +4,7 @@ asmc is a library of low-level interface that allow you to read / write values t
 
 ### Caution!
 
-This tool will allow you to read / write values to the SMC which could or could not irreversably damage your computer. Especially manipulating the fans could cause overheating and permanent damange.
-
-**USE THIS PROGRAM AT YOUR OWN RISK!**
+This tool will allow you to read / write values to the SMC which could or could not irreversably damage your computer. Especially manipulating the fans could cause overheating and permanent damange. **USE THIS PROGRAM AT YOUR OWN RISK!**
 
 ### Usage
 
