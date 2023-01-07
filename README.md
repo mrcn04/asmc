@@ -33,6 +33,8 @@ asmc
 
 #### Example Usage with Swift
 
+###### Create a **Bridging Header** file on xCode in order to access the C header.
+
 ```swift
 func callCFunction() {
   SMCOpen()
