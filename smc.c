@@ -251,16 +251,75 @@ double SMCGetTemperature(char *key)
     if (val.dataSize > 0)
     {
 
-      if (strcmp(val.dataType, "flt ") == 0)
+      if (strcmp(val.dataType, DATATYPE_UINT8) == 0)
       {
-        return *(float *)val.bytes;
+        int intValue = val.bytes[0];
+        return intValue;
       }
-
+      if (strcmp(val.dataType, DATATYPE_UINT16) == 0)
+      {
+        int intValue = val.bytes[0] + val.bytes[1];
+        return intValue;
+      }
+      if (strcmp(val.dataType, DATATYPE_UINT32) == 0)
+      {
+        int intValue = val.bytes[0] + val.bytes[1] + val.bytes[2] + val.bytes[3];
+        return intValue;
+      }
+      if (strcmp(val.dataType, DATATYPE_SP1E) == 0)
+      {
+        int intValue = val.bytes[0] * 256 + (unsigned char)val.bytes[1];
+        return intValue / 16384.0;
+      }
+      if (strcmp(val.dataType, DATATYPE_SP3C) == 0)
+      {
+        int intValue = val.bytes[0] * 256 + (unsigned char)val.bytes[1];
+        return intValue / 4096.0;
+      }
+      if (strcmp(val.dataType, DATATYPE_SP4B) == 0)
+      {
+        int intValue = val.bytes[0] * 256 + (unsigned char)val.bytes[1];
+        return intValue / 2048.0;
+      }
+      if (strcmp(val.dataType, DATATYPE_SP5A) == 0)
+      {
+        int intValue = val.bytes[0] * 256 + (unsigned char)val.bytes[1];
+        return intValue / 1024.0;
+      }
+      if (strcmp(val.dataType, DATATYPE_SP69) == 0)
+      {
+        int intValue = val.bytes[0] * 256 + (unsigned char)val.bytes[1];
+        return intValue / 512.0;
+      }
       if (strcmp(val.dataType, DATATYPE_SP78) == 0)
       {
         // convert sp78 value to temperature
         int intValue = val.bytes[0] * 256 + (unsigned char)val.bytes[1];
         return intValue / 256.0;
+      }
+      if (strcmp(val.dataType, DATATYPE_SP87) == 0)
+      {
+        int intValue = val.bytes[0] * 256 + (unsigned char)val.bytes[1];
+        return intValue / 128.0;
+      }
+      if (strcmp(val.dataType, DATATYPE_SP96) == 0)
+      {
+        int intValue = val.bytes[0] * 256 + (unsigned char)val.bytes[1];
+        return intValue / 64.0;
+      }
+      if (strcmp(val.dataType, DATATYPE_SPB4) == 0)
+      {
+        int intValue = val.bytes[0] * 256 + (unsigned char)val.bytes[1];
+        return intValue / 16.0;
+      }
+      if (strcmp(val.dataType, DATATYPE_SPF0) == 0)
+      {
+        int intValue = val.bytes[0] * 256 + (unsigned char)val.bytes[1];
+        return intValue;
+      }
+      if (strcmp(val.dataType, "flt ") == 0)
+      {
+        return *(float *)val.bytes;
       }
     }
   }
