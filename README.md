@@ -2,7 +2,7 @@
 
 asmc is a library of low-level interface that allow you to read / write values to the SMC using the AppleSMC kernel extension with C. You can read the temperature of the sensors, get the fan speeds etc. The source code does not belong to me. I only edited, added, modified, enchanged the codes in a way that I need.
 
-#### Caution!
+### Caution!
 
 This tool will allow you to read / write values to the SMC which could or could not irreversably damage your computer. Especially manipulating the fans could cause overheating and permanent damange.
 
