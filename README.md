@@ -68,4 +68,4 @@ Apple System Management Control (SMC) Tool Copyright (C) 2006
 
 ### License
 
-This project is under [MIT License](https://github.com/mrcn04/asmc/blob/master/LICENSE)
+This project is under [GPL-3.0 License](https://github.com/mrcn04/asmc/blob/master/LICENSE)
