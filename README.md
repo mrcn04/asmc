@@ -14,19 +14,19 @@ This tool will allow you to read / write values to the SMC which could or could 
 
 ##### Compiling
 
-```
+```bash
 make
 ```
 
 ##### Running
 
-```
+```bash
 ./asmc
 ```
 
 or
 
-```
+```bash
 sudo make install # installs to /usr/local/bin
 asmc
 ```
